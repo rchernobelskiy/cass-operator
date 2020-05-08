@@ -1,0 +1,13 @@
+scorecard:
+  # Setting a global scorecard option
+  output: json
+  plugins:
+    # `basic` tests configured to test 2 CRs
+    - basic:
+        cr-manifest:
+          - "example-cassdc-yaml/cassandra-3.11.6/example-cassdc-minimal.yaml"
+    # `olm` tests configured to test 2 CRs
+    - olm:
+        cr-manifest:
+          - "example-cassdc-yaml/cassandra-3.11.6/example-cassdc-minimal.yaml"
+        csv-path: "deploy/olm-catalog/cass-operator/1.1.0/cass-operator.v1.1.0.clusterserviceversion.yaml"
